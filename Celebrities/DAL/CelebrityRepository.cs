@@ -23,10 +23,8 @@ namespace Celebrities.DAL
 
         private void Init()
         {
-            File.Delete(dbPath);
             var url = "https://www.imdb.com/list/ls052283250";
             var web = new HtmlWeb();
-            //var doc = await web.LoadFromWebAsync(url);
             var doc = web.Load(url);
             SaveChanges(mapper.MapAsList(doc));
         }
